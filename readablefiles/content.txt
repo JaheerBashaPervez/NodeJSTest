@@ -1,0 +1,424 @@
+JS Tutorial
+JS HOME
+JS Introduction
+JS Where To
+JS Output
+JS Statements
+JS Syntax
+JS Comments
+JS Variables
+JS Let
+JS Const
+JS Operators
+JS Arithmetic
+JS Assignment
+JS Data Types
+JS Functions
+JS Objects
+JS Events
+JS Strings
+JS String Methods
+JS String Search
+JS String Templates
+JS Numbers
+JS Number Methods
+JS Arrays
+JS Array Methods
+JS Array Sort
+JS Array Iteration
+JS Array Const
+JS Dates
+JS Date Formats
+JS Date Get Methods
+JS Date Set Methods
+JS Math
+JS Random
+JS Booleans
+JS Comparisons
+JS Conditions
+JS Switch
+JS Loop For
+JS Loop For In
+JS Loop For Of
+JS Loop While
+JS Break
+JS Iterables
+JS Sets
+JS Maps
+JS Typeof
+JS Type Conversion
+JS Bitwise
+JS RegExp
+JS Errors
+JS Scope
+JS Hoisting
+JS Strict Mode
+JS this Keyword
+JS Arrow Function
+JS Classes
+JS JSON
+JS Debugging
+JS Style Guide
+JS Best Practices
+JS Mistakes
+JS Performance
+JS Reserved Words
+
+JS Versions
+JS Versions
+JS 2009 (ES5)
+JS 2015 (ES6)
+JS 2016
+JS 2017
+JS 2018
+JS IE / Edge
+JS History
+
+JS Objects
+Object Definitions
+Object Properties
+Object Methods
+Object Display
+Object Accessors
+Object Constructors
+Object Prototypes
+Object Iterables
+Object Sets
+Object Maps
+Object Reference
+
+JS Functions
+Function Definitions
+Function Parameters
+Function Invocation
+Function Call
+Function Apply
+Function Closures
+
+JS Classes
+Class Intro
+Class Inheritance
+Class Static
+
+JS Async
+JS Callbacks
+JS Asynchronous
+JS Promises
+JS Async/Await
+
+JS HTML DOM
+DOM Intro
+DOM Methods
+DOM Document
+DOM Elements
+DOM HTML
+DOM Forms
+DOM CSS
+DOM Animations
+DOM Events
+DOM Event Listener
+DOM Navigation
+DOM Nodes
+DOM Collections
+DOM Node Lists
+
+JS Browser BOM
+JS Window
+JS Screen
+JS Location
+JS History
+JS Navigator
+JS Popup Alert
+JS Timing
+JS Cookies
+
+JS Web APIs
+Web API Intro
+Web Forms API
+Web History API
+Web Storage API
+Web Worker API
+Web Fetch API
+Web Geolocation API
+
+JS AJAX
+AJAX Intro
+AJAX XMLHttp
+AJAX Request
+AJAX Response
+AJAX XML File
+AJAX PHP
+AJAX ASP
+AJAX Database
+AJAX Applications
+AJAX Examples
+
+JS JSON
+JSON Intro
+JSON Syntax
+JSON vs XML
+JSON Data Types
+JSON Parse
+JSON Stringify
+JSON Objects
+JSON Arrays
+JSON Server
+JSON PHP
+JSON HTML
+JSON JSONP
+
+JS vs jQuery
+jQuery Selectors
+jQuery HTML
+jQuery CSS
+jQuery DOM
+
+JS Graphics
+JS Graphics
+JS Canvas
+JS Plotly
+JS Chart.js
+JS Google Chart
+JS D3.js
+
+JS Examples
+JS Examples
+JS HTML DOM
+JS HTML Input
+JS HTML Objects
+JS HTML Events
+JS Browser
+JS Editor
+JS Exercises
+JS Quiz
+JS Certificate
+
+JS References
+JavaScript Objects
+HTML DOM Objects
+
+
+
+
+JavaScript Async
+"async and await make promises easier to write"
+
+async makes a function return a Promise
+
+await makes a function wait for a Promise
+
+Async Syntax
+The keyword async before a function makes the function return a promise:
+
+Example
+async function myFunction() {
+  return "Hello";
+}
+Is the same as:
+
+function myFunction() {
+  return Promise.resolve("Hello");
+}
+Here is how to use the Promise:
+
+myFunction().then(
+  function(value) { /* code if successful */ },
+  function(error) { /* code if some error */ }
+);
+Example
+async function myFunction() {
+  return "Hello";
+}
+myFunction().then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+
+Or simpler, since you expect a normal value (a normal response, not an error):
+
+Example
+async function myFunction() {
+  return "Hello";
+}
+myFunction().then(
+  function(value) {myDisplayer(value);}
+);
+
+Await Syntax
+The keyword await before a function makes the function wait for a promise:
+
+let value = await promise;
+The await keyword can only be used inside an async function.
+
+Example
+Let's go slowly and learn how to use it.
+
+Basic Syntax
+async function myDisplay() {
+  let myPromise = new Promise(function(resolve, reject) {
+    resolve("I love You !!");
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+myDisplay();
+
+The two arguments (resolve and reject) are pre-defined by JavaScript.
+
+We will not create them, but call one of them when the executor function is ready.
+
+Very often we will not need a reject function.
+
+Example without reject
+async function myDisplay() {
+  let myPromise = new Promise(function(resolve) {
+    resolve("I love You !!");
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+myDisplay();
+
+Waiting for a Timeout
+async function myDisplay() {
+  let myPromise = new Promise(function(resolve) {
+    setTimeout(function() {resolve("I love You !!");}, 3000);
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+myDisplay();
+
+Waiting for a File
+async function getFile() {
+  let myPromise = new Promise(function(resolve) {
+    let req = new XMLHttpRequest();
+    req.open('GET', "mycar.html");
+    req.onload = function() {
+      if (req.status == 200) {
+        resolve(req.response);
+      } else {
+        resolve("File not Found");
+      }
+    };
+    req.send();
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+getFile();
+
+Browser Support
+ECMAScript 2017 introduced the JavaScript keywords async and await.
+
+The following table defines the first browser version with full support for both:
+
+Chrome 55	Edge 15	Firefox 52	Safari 11	Opera 42
+Dec, 2016	Apr, 2017	Mar, 2017	Sep, 2017	Dec, 2016
+
+
+
+ADVERTISEMENT
+
+NEW
+We just launched
+W3Schools videos
+
+
+Explore now
+COLOR PICKER
+colorpicker
+   
+Get certified
+by completing
+a course today!
+
+w
+3
+s
+c
+h
+o
+o
+l
+s
+C
+E
+R
+T
+I
+F
+I
+E
+D
+.
+2
+0
+2
+2
+CODE GAME
+Code Game
+ADVERTISEMENT
+
+ADVERTISEMENT
+
+ADVERTISEMENT
+
+Top Tutorials
+HTML Tutorial
+CSS Tutorial
+JavaScript Tutorial
+How To Tutorial
+SQL Tutorial
+Python Tutorial
+W3.CSS Tutorial
+Bootstrap Tutorial
+PHP Tutorial
+Java Tutorial
+C++ Tutorial
+jQuery Tutorial
+Top References
+HTML Reference
+CSS Reference
+JavaScript Reference
+SQL Reference
+Python Reference
+W3.CSS Reference
+Bootstrap Reference
+PHP Reference
+HTML Colors
+Java Reference
+Angular Reference
+jQuery Reference
+Top Examples
+HTML Examples
+CSS Examples
+JavaScript Examples
+How To Examples
+SQL Examples
+Python Examples
+W3.CSS Examples
+Bootstrap Examples
+PHP Examples
+Java Examples
+XML Examples
+jQuery Examples
+Web Courses
+HTML Course
+CSS Course
+JavaScript Course
+Front End Course
+SQL Course
+Python Course
+PHP Course
+jQuery Course
+Java Course
+C++ Course
+C# Course
+XML Course
+W3Schools is optimized for learning and training. Examples might be simplified to improve reading and learning. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using W3Schools, you agree to have read and accepted our terms of use, cookie and privacy policy.
+
+Copyright 1999-2022 by Refsnes Data. All Rights Reserved.
+W3Schools is Powered by W3.CSS.
+
+

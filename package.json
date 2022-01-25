@@ -5,11 +5,10 @@
   "main": "NPMtest.js",
   "dependencies": {
     "express": "^4.17.2",
-    "loadash": "^1.0.0",
-    "nodemon": "^2.0.15"
+    "loadash": "^1.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
